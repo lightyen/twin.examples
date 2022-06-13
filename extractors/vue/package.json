@@ -1,0 +1,6 @@
+{
+  "name": "test",
+  "dependencies": {
+    "@vue/compiler-dom": "^3.2.37"
+  }
+}

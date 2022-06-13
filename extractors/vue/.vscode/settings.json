@@ -1,0 +1,4 @@
+{
+  "tailwindcss.enabled": true,
+  "tailwindcss.otherLanguages": ["vue"]
+}
