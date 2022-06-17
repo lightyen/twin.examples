@@ -25,5 +25,15 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addVariant }) {
+			addVariant("dropdown", ".dropdown &")
+			addVariant("dropdown-show", [
+				".dropdown.dropdown-open &",
+				".dropdown.dropdown-hover:hover &",
+				".dropdown:not(.dropdown-hover):focus &",
+				".dropdown:not(.dropdown-hover):focus-within &",
+			])
+		},
+	],
 } as Tailwind.ConfigJS

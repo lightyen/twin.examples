@@ -46,7 +46,13 @@ function Control() {
 	const id = useId()
 	return (
 		<div tw="flex">
-			<label htmlFor={id} tw="self-center select-none text-white mr-3">
+			<label
+				htmlFor={id}
+				tw="self-center select-none text-white mr-3
+
+
+"
+			>
 				Enabled
 			</label>
 			<Switch id={id} />
@@ -98,10 +104,9 @@ function Dropdown() {
 				<div
 					className="dropdown-content"
 					tw="
-						[.dropdown &]:(mt-3 absolute z-50 shadow-2xl origin-top duration-200 invisible opacity-0 scale-95)
-						[.dropdown.dropdown-open &, .dropdown.dropdown-hover:hover &, .dropdown:not(.dropdown-hover):focus &, .dropdown:not(.dropdown-hover):focus-within &]:(
-							visible opacity-100 scale-100
-						)
+						dropdown:(mt-3 absolute z-50 shadow-2xl origin-top duration-200)
+						dropdown:(invisible opacity-0 scale-95)
+						dropdown-show:(visible opacity-100 scale-100)
 					"
 				>
 					<ul tw="w-48 p-3 rounded-lg bg-slate-50" tabIndex={0}>

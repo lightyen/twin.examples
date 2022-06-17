@@ -1,11 +1,11 @@
 import { useId } from "react"
 import { FormattedMessage } from "react-intl"
 import tw, { screen } from "twin.macro"
-import { Button } from "~/components/Button"
-import { Logo } from "~/components/Logo"
-import { Switch } from "~/components/Switch"
-import { useAction, useSelect } from "~/store"
-import { LocaleType, supports } from "~/store/i18n/languages"
+import { Button } from "./components/Button"
+import { Logo } from "./components/Logo"
+import { Switch } from "./components/Switch"
+import { useAction, useSelect } from "./store"
+import { LocaleType, supports } from "./store/i18n/languages"
 
 export const screenHelper = <div css={screen`sm`({ fontSize: "52px" })} />
 
@@ -98,15 +98,14 @@ function Dropdown() {
 				<div
 					className="dropdown-content"
 					tw="
-						[.dropdown &]:(mt-3 absolute z-50 shadow-2xl origin-top duration-200 invisible opacity-0 scale-95)
-						[.dropdown.dropdown-open &, .dropdown.dropdown-hover:hover &, .dropdown:not(.dropdown-hover):focus &, .dropdown:not(.dropdown-hover):focus-within &]:(
-							visible opacity-100 scale-100
-						)
+						dropdown:(mt-3 absolute z-50 shadow-2xl origin-top duration-200)
+						dropdown:(invisible opacity-0 scale-95)
+						dropdown-show:(visible opacity-100 scale-100)
 					"
 				>
 					<ul tw="w-48 p-3 rounded-lg bg-slate-50" tabIndex={0}>
 						<li>
-							<button type="button" tw="w-full text-left bg-red-200 hover:bg-pink-300  px-4 py-2">
+							<button type="button" tw="w-full text-left bg-pink-200 hover:bg-pink-300  px-4 py-2">
 								Item 1
 							</button>
 						</li>
