@@ -25,6 +25,7 @@ export default {
 			},
 		},
 	},
+	experimental: { matchVariant: true },
 	plugins: [
 		function ({ addVariant }) {
 			addVariant("dropdown", ".dropdown &")
@@ -35,17 +36,14 @@ export default {
 				".dropdown:not(.dropdown-hover):focus-within &",
 			])
 		},
-		function ({ matchComponents, matchUtilities, theme }) {
-			matchUtilities(
-				{
-					tab(value) {
-						return {
-							tabSize: value,
-						}
-					},
+		function ({ matchComponents, matchUtilities, matchVariant, theme }) {
+			matchUtilities({
+				tab(value) {
+					return {
+						tabSize: value,
+					}
 				},
-				{ values: {} },
-			)
+			})
 			matchComponents(
 				{
 					"test-bg"(value) {
@@ -58,6 +56,12 @@ export default {
 				},
 				{ values: theme("colors.cyan") },
 			)
+			matchVariant({
+				tab(value) {
+					if (value == undefined) return `& > *`
+					return `&.${value ?? ""} > *`
+				},
+			})
 		},
 	],
 } as Tailwind.ConfigJS

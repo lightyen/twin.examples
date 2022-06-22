@@ -4,7 +4,7 @@ export default {
 	acceptLanguage(languageId: string) {
 		return languageId === "vue"
 	},
-	find(languageId: string, code: string, position: number, jsxPropImportChecking: boolean, { console, typescriptExtractor }) {
+	find(languageId: string, code: string, position: number, includeEnd: boolean, jsxPropImportChecking: boolean, { console, typescriptExtractor }) {
 		// console.info(position)
 		const result = parse(code)
 		const _find = (languageId: "typescript" | "javascript", node: TemplateChildNode) => {
@@ -13,6 +13,7 @@ export default {
 				languageId,
 				node.loc.source,
 				position - offset,
+				includeEnd,
 				jsxPropImportChecking,
 			)
 
