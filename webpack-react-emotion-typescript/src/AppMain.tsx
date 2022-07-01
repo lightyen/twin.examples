@@ -46,13 +46,7 @@ function Control() {
 	const id = useId()
 	return (
 		<div tw="flex">
-			<label
-				htmlFor={id}
-				tw="self-center select-none text-white mr-3
-
-
-"
-			>
+			<label htmlFor={id} tw="self-center select-none text-white mr-3">
 				Enabled
 			</label>
 			<Switch id={id} />
