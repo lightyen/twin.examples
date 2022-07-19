@@ -18,7 +18,7 @@ py-2 rounded-3xl ring-4 transition ring-offset-2
 bg-red-700/70 text-white ring-offset-gray-500
 hover:(bg-red-500 ring-offset-red-400/50)`
 
-export default function AppMain() {
+export function Main() {
 	return (
 		<div
 			css={[

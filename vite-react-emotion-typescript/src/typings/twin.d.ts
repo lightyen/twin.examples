@@ -22,7 +22,7 @@ declare module "twin.macro" {
 	}
 
 	import { CSSObject, PropsOf, Theme } from "@emotion/react"
-	import { Interpolation } from "@emotion/serialize"
+	import { CSSInterpolation, Interpolation } from "@emotion/serialize"
 	import { StyledComponent, StyledOptions } from "@emotion/styled"
 	import { FilteringStyledOptions } from "@emotion/styled/types/base"
 
@@ -220,4 +220,6 @@ declare module "twin.macro" {
 	export function theme<T>(str: string): any
 
 	export function GlobalStyles(): JSX.Element
+
+	export const globalStyles: CSSInterpolation
 }
