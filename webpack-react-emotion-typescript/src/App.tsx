@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react"
 import { PropsWithChildren } from "react"
-import { QueryClientProvider } from "react-query"
+import { QueryClientProvider } from "@tanstack/react-query"
 import { LocaleProvider, StoreProvider } from "~/store/Provider"
 import { GlobalStyles } from "./GlobalStyles"
 import { Main } from "./Main"

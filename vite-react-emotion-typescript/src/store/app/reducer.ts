@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { QueryClient } from "react-query"
+import { QueryClient } from "@tanstack/react-query"
 import * as ac from "./action"
 import { getScreen, ScreenType } from "./screen"
 
