@@ -54,7 +54,7 @@ export default function (): Configuration {
 		output: {
 			path: dist,
 			filename: join_network(outputJS, "[name].js?[fullhash]"),
-			chunkFilename: join_network(outputJS, "[name].js?.[fullhash:8]"),
+			chunkFilename: join_network(outputJS, "[name].js?[fullhash:8]"),
 			publicPath,
 		},
 		module: {
