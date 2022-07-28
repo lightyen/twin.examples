@@ -26,7 +26,6 @@ export function Main() {
 				tw`bg-gradient-to-b from-blue-900 to-blue-400 content-around`,
 			]}
 		>
-			<svg />
 			<div tw="flex flex-col justify-center h-full space-y-5">
 				<Button isPrimary>Submit</Button>
 				<Button isSecondary>Cancel</Button>
