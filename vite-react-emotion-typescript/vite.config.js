@@ -15,7 +15,7 @@ export default defineConfig(({}) => ({
 		react({
 			jsxImportSource: "@emotion/react",
 			babel: {
-				plugins: ["@babel/plugin-transform-runtime", "@emotion", "macros"],
+				plugins: ["@emotion", "macros"],
 			},
 		}),
 	],
