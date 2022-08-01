@@ -39,7 +39,7 @@ specifiers:
   vite: 3.0.3
   vite-plugin-eslint: 1.7.0
   vite-plugin-svgr: 2.2.1
-  vite-plugin-tsconfig-paths: 1.1.1
+  vite-plugin-tsconfig-paths: 1.2.0
 
 dependencies:
   '@babel/core': 7.18.9
@@ -82,7 +82,7 @@ devDependencies:
   vite: 3.0.3
   vite-plugin-eslint: 1.7.0_eslint@8.20.0+vite@3.0.3
   vite-plugin-svgr: 2.2.1_vite@3.0.3
-  vite-plugin-tsconfig-paths: 1.1.1_jpjzt7ac3smvvseyxvpa6vpbpu
+  vite-plugin-tsconfig-paths: 1.2.0_jpjzt7ac3smvvseyxvpa6vpbpu
 
 packages:
 
@@ -4728,8 +4728,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-tsconfig-paths/1.1.1_jpjzt7ac3smvvseyxvpa6vpbpu:
-    resolution: {integrity: sha512-G9/x3bzJSD+Wg1wQ+PSorBYWnZHXxQukOhGEgKtmRsyUiQk6uvJD0BbaFEYVh1KajJK9mMbxTICtTY1Ae9hkig==}
+  /vite-plugin-tsconfig-paths/1.2.0_jpjzt7ac3smvvseyxvpa6vpbpu:
+    resolution: {integrity: sha512-DpYiubYbrT3MzuJJ/DEavnbACiApoNM5RsH9HQHG5vDlTG4aRmKkwlw9gUFEeymCjvLTwmlScwtj0m02t3sgRQ==}
     peerDependencies:
       vite: '*'
     dependencies:
