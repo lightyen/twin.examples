@@ -1,31 +1,25 @@
-// eslint-disable-next-line spaced-comment
-/// <reference types="@emotion/react/types/css-prop" />
+// @emotion/react
 
-declare module "twin.macro" {
-	import { CreateStyled } from "@emotion/styled"
-	declare const styled: CreateStyled
-	export { styled }
+import { CSSObject, Interpolation, PropsOf, Theme } from "@emotion/react"
+import { StyledComponent, StyledOptions } from "@emotion/styled"
+import { FilteringStyledOptions } from "@emotion/styled/types/base"
+
+import {} from "react"
+
+declare module "react" {
+	interface Attributes {
+		/** twin.macro */
+		tw?: string
+
+		/**
+		 * twin.macro
+		 * @deprecated
+		 */
+		cs?: string
+	}
 }
 
 declare module "twin.macro" {
-	declare module "react" {
-		interface Attributes {
-			/** **twin.macro** */
-			tw?: string
-
-			/**
-			 * **twin.macro**
-			 * @deprecated NOT recommended.
-			 */
-			cs?: string
-		}
-	}
-
-	import { CSSObject, PropsOf, Theme } from "@emotion/react"
-	import { CSSInterpolation, Interpolation } from "@emotion/serialize"
-	import { StyledComponent, StyledOptions } from "@emotion/styled"
-	import { FilteringStyledOptions } from "@emotion/styled/types/base"
-
 	/**
 	 * @typeparam ComponentProps  Props which will be included when withComponent is called
 	 * @typeparam SpecificComponentProps  Props which will *not* be included when withComponent is called
@@ -62,13 +56,13 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<
 			C extends React.ComponentClass<React.ComponentProps<C>>,
-			ForwardedProps extends keyof React.ComponentProps<C> = keyof React.ComponentProps<C>,
+			ForwardedProps extends keyof React.ComponentProps<C> & string = keyof React.ComponentProps<C> & string,
 		>(
 			component: C,
 			options: FilteringStyledOptions<React.ComponentProps<C>, ForwardedProps>,
@@ -87,9 +81,9 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)<Props>(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<C extends React.ComponentClass<React.ComponentProps<C>>>(
 			component: C,
@@ -109,13 +103,13 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<
 			C extends React.ComponentType<React.ComponentProps<C>>,
-			ForwardedProps extends keyof React.ComponentProps<C> = keyof React.ComponentProps<C>,
+			ForwardedProps extends keyof React.ComponentProps<C> & string = keyof React.ComponentProps<C> & string,
 		>(
 			component: C,
 			options: FilteringStyledOptions<React.ComponentProps<C>, ForwardedProps>,
@@ -130,9 +124,9 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<C extends React.ComponentType<React.ComponentProps<C>>>(
 			component: C,
@@ -148,13 +142,14 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<
 			Tag extends keyof JSX.IntrinsicElements,
-			ForwardedProps extends keyof JSX.IntrinsicElements[Tag] = keyof JSX.IntrinsicElements[Tag],
+			ForwardedProps extends keyof JSX.IntrinsicElements[Tag] & string = keyof JSX.IntrinsicElements[Tag] &
+				string,
 		>(
 			tag: Tag,
 			options: FilteringStyledOptions<JSX.IntrinsicElements[Tag], ForwardedProps>,
@@ -168,9 +163,9 @@ declare module "twin.macro" {
 		 * This function accepts a React component or tag ('div', 'a' etc).
 		 *
 		 * @example tw(MyComponent)`w-full`
-		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width })
+		 * @example tw(MyComponent)(myComponentProps => ({ width: myComponentProps.width }))
 		 * @example tw('div')`w-full`
-		 * @example tw('div')<Props>(props => ({ width: props.width })
+		 * @example tw('div')<Props>(props => ({ width: props.width }))
 		 */
 		<Tag extends keyof JSX.IntrinsicElements>(
 			tag: Tag,
@@ -178,7 +173,6 @@ declare module "twin.macro" {
 		): CreateStyledComponent<{ theme?: Theme; as?: React.ElementType }, JSX.IntrinsicElements[Tag]>
 	}
 
-	/** twin.macro */
 	export type StyledTags = {
 		[Tag in keyof JSX.IntrinsicElements]: CreateStyledComponent<
 			{
@@ -189,37 +183,25 @@ declare module "twin.macro" {
 		>
 	}
 
-	interface Tw extends StyledTags, CreateStyled {
+	interface CreateStyledTw extends StyledTags, CreateStyled {
 		(arr: TemplateStringsArray): CSSObject
 	}
 
-	export { css, keyframes, styled } from "@emotion/react"
-	/** twin.macro */
-	declare const tw: Tw
+	const tw: CreateStyledTw
 	export default tw
 
-	/**
-	 * **NOTE: `Screen as a key` is a bad style.**
-	 *
-	 * Use `screen` like this:
-	 *
-	 * ```tsx
-	 * <div css={screen`sm`({ display: 'block', ...tw`inline` })} />
-	 * ```
-	 */
-	export function screen(arr: TemplateStringsArray): (arg: Interpolation) => CSSObject
+	export { css, keyframes } from "@emotion/react"
+	export { default as styled } from "@emotion/styled"
 
-	/** @deprecated NOT recommended. */
-	export function screen(str: string): (arg: Interpolation) => CSSObject
+	export function screen(arr: TemplateStringsArray): (arg: CSSObject) => CSSObject
+	export function screen(str: string): (arg: CSSObject) => CSSObject
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export function theme<T>(arr: TemplateStringsArray): any
-
-	/** @deprecated NOT recommended. */
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export function theme<T>(str: string): any
 
 	export function GlobalStyles(): JSX.Element
 
-	export const globalStyles: CSSInterpolation
+	export const globalStyles: CSSObject
 }

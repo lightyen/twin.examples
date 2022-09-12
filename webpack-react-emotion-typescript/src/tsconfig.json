@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "target": "ESNext",
     "module": "ESNext",
-    "types": ["@types/webpack-env"],
+    "types": ["@types/webpack-env", "@emotion/react/types/css-prop"],
     "lib": ["esnext", "dom", "dom.iterable", "webworker"],
     "paths": {
       "~/*": ["./*"],

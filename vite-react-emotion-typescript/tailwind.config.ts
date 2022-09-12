@@ -17,6 +17,7 @@ export default {
 			colors: {
 				electric: "#db00ff",
 				ribbon: "#0047ff",
+				bar: "var(--color / <alpha-value>)",
 			},
 			fontFamily: {
 				sans: [

@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "target": "ESNext",
     "module": "ESNext",
-    "types": ["vite/client", "@emotion/react/types/css-prop"],
+    "types": ["vite/client", "styled-components/cssprop"],
     "lib": ["esnext", "dom", "dom.iterable", "webworker"],
     "paths": {
       "~/*": ["./*"],

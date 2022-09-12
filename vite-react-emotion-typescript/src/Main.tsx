@@ -32,6 +32,7 @@ export function Main() {
 				<Button isSmall>Close</Button>
 				<StyledButton>Styled</StyledButton>
 				<Control />
+				<div tw=" fill-transparent ">KKKKK</div>
 			</div>
 			<Dropdown />
 			<DeviceMode />
